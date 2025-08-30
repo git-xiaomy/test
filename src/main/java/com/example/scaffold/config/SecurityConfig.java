@@ -74,6 +74,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(authz -> authz
                 // Public endpoints
                 .requestMatchers("/auth/login", "/auth/register").permitAll()
+                .requestMatchers("/health", "/info", "/docs").permitAll()
                 .requestMatchers("/doc.html", "/webjars/**", "/swagger-resources/**", "/v3/api-docs/**").permitAll()
                 .requestMatchers("/actuator/**").permitAll()
                 // Admin endpoints
